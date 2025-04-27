@@ -15,6 +15,7 @@ The following demo showcases the app's main features, including market overview,
   <img src="screenshots/Screenshot_20250427_152255_Expo Go.jpg" alt="Featured Coins" width="200"/>
   <img src="screenshots/Screenshot_20250427_152647_Expo Go.jpg" alt="Coin Details" width="200"/>
   <img src="screenshots/Screenshot_20250427_152702_Expo Go.jpg" alt="Price Chart" width="200"/>
+  <img src="screenshots/Screenshot_20250427_152658_Expo Go.jpg" alt="Price Chart2" width="200"/>
 </div>
 
 ## Features
