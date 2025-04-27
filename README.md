@@ -2,15 +2,20 @@
 
 A modern cryptocurrency market application built with React Native and Expo. This app allows users to track cryptocurrency prices, view detailed information about specific coins, and monitor market trends.
 
-![React Native Crypto Market App](/assets/app-preview.png)
-
 ## App Demo
 
-Watch a demonstration of the app in action:
+The following demo showcases the app's main features, including market overview, coin details, search functionality, and the hidden features like pull-to-refresh for updating data.
 
-![App Demo](./recording/recodring.mp4)
+![App Demo Recording](screenshots/recording.gif)
 
-The video showcases the app's main features, including market overview, coin details, search functionality, and the hidden features like pull-to-refresh for updating data.
+### Screenshots
+
+<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+  <img src="screenshots/Screenshot_20250427_152245_Expo Go.jpg" alt="Market Overview" width="200"/>
+  <img src="screenshots/Screenshot_20250427_152255_Expo Go.jpg" alt="Featured Coins" width="200"/>
+  <img src="screenshots/Screenshot_20250427_152647_Expo Go.jpg" alt="Coin Details" width="200"/>
+  <img src="screenshots/Screenshot_20250427_152702_Expo Go.jpg" alt="Price Chart" width="200"/>
+</div>
 
 ## Features
 
@@ -101,20 +106,6 @@ The project includes detailed documentation for various components:
 - `npm run web` - Start the app in a web browser
 - `npm test` - Run tests
 - `npm run lint` - Run linting
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Acknowledgments
 
