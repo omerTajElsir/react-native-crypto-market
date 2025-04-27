@@ -54,8 +54,10 @@ const CandleChart: React.FC<CandleChartProps> = ({
 
   // Format price for display
   const formatPrice = (price: number) => {
-    if (price >= 1000) {
-      return price.toLocaleString();
+    if (price >= 1000000) {
+      return (price / 1000000).toFixed(1) + 'M';
+    } else if (price >= 1000) {
+      return (price / 1000).toFixed(1) + 'K';
     } else if (price >= 1) {
       return price.toFixed(2);
     } else {
@@ -85,10 +87,10 @@ const CandleChart: React.FC<CandleChartProps> = ({
           {yAxisLabels.map((label, index) => (
             <React.Fragment key={`y-label-${index}`}>
               <SvgText
-                x={width - 10}
+                x={width - 16}
                 y={label.y + 4}
-                fontSize={10}
-                fill="#CCCCCC"
+                fontSize={14}
+                fill="#FFFFFF80"
                 textAnchor="end"
 
               >
@@ -111,9 +113,9 @@ const CandleChart: React.FC<CandleChartProps> = ({
               {/* Current price card */}
               <Rect
                 x={chartEndX - 12}
-                y={currentPriceY - 10}
-                width={54}
-                height={20}
+                y={currentPriceY - 12}
+                width={46}
+                height={26}
                 fill="#CDFF00"
                 rx={5}
                 ry={5}
@@ -128,9 +130,9 @@ const CandleChart: React.FC<CandleChartProps> = ({
                 strokeDasharray="3,3"
               />
               <SvgText
-                x={chartEndX}
-                y={currentPriceY + 4}
-                fontSize={10}
+                x={chartEndX - 6}
+                y={currentPriceY + 6}
+                fontSize={12}
                 fill="#000000"
               >
                 ${formatPrice(currentPrice??0)}
@@ -141,7 +143,7 @@ const CandleChart: React.FC<CandleChartProps> = ({
           {/* Candles */}
           {data.map((item, index) => {
             const ohlc = item[currency];
-            const x = chartStartX + (index * (chartEndX - chartStartX)) / data.length;
+            const x = chartStartX + (index * (chartEndX - chartStartX)) / data.length - 24;
             const open = normalizeValue(ohlc.open);
             const high = normalizeValue(ohlc.high);
             const low = normalizeValue(ohlc.low);
@@ -184,14 +186,14 @@ const CandleChart: React.FC<CandleChartProps> = ({
             key={`interval-${interval}`}
             style={[
               styles.intervalButton,
-              selectedInterval === interval ? styles.selectedIntervalButton : undefined,
+              selectedInterval === interval ? styles.selectedIntervalButton : styles.unSelectedIntervalButton,
             ]}
             onPress={() => onIntervalChange ? onIntervalChange(interval) : undefined}
           >
             <Text
               style={[
                 styles.intervalButtonText,
-                selectedInterval === interval ? styles.selectedIntervalButtonText : undefined,
+                selectedInterval === interval ? styles.selectedIntervalButtonText : styles.unSelectedIntervalButtonText,
               ]}
             >
               {interval === 'max' ? 'MAX' : `${interval}D`}
@@ -228,7 +230,13 @@ const styles = StyleSheet.create({
   },
   selectedIntervalButton: {
     backgroundColor: '#CDFF00',
+    borderRadius: 8
   },
+
+  unSelectedIntervalButton: {
+    backgroundColor: '#FFFFFF00',
+  },
+
   intervalButtonText: {
     color: '#FFFFFF',
     fontFamily: 'LufgaMedium',
@@ -236,6 +244,9 @@ const styles = StyleSheet.create({
   },
   selectedIntervalButtonText: {
     color: '#000000',
+  },
+  unSelectedIntervalButtonText: {
+    color: '#FFFFFF80',
   },
 });
 

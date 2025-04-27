@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {View, Text, TouchableWithoutFeedback, Alert, SafeAreaView, Image} from "react-native";
 import { images } from "@/constants/images";
 import { useAuth } from "@/app/features/auth/hooks/useAuth";
@@ -24,7 +24,7 @@ const BiometricAuthScreen = () => {
                 resizeMode="cover"
             />
 
-            <Text className="font-lufga-regular absolute top-24 text-textPrimary text-lg mt-6 ">Use Biometric to log in?</Text>
+            <Text className="font-lufga-large absolute top-12 text-textPrimary text-3xl m-xl">Use Biometric{'\n'}to log in?</Text>
 
             <TouchableWithoutFeedback
                 onPress={handleBiometricAuth}

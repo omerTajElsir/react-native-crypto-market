@@ -1,5 +1,5 @@
-import React from "react";
-import {View, Text, ScrollView, ActivityIndicator, SafeAreaView, NativeSyntheticEvent, NativeScrollEvent} from "react-native";
+import React, { useState } from "react";
+import {View, Text, ScrollView, ActivityIndicator, SafeAreaView, NativeSyntheticEvent, NativeScrollEvent, RefreshControl} from "react-native";
 import FeaturedCard from "../components/featured_card";
 import AppBar from "@/app/features/common/components/app_bar";
 import SearchBar from "@/app/features/common/components/search_bar";
@@ -16,8 +16,12 @@ const MarketScreen = () => {
         loading, 
         loadingMore, 
         error, 
-        loadMoreCoins 
+        loadMoreCoins,
+        refreshCoins
     } = useMarketData('usd', 10);
+
+    // State for pull-to-refresh
+    const [refreshing, setRefreshing] = useState(false);
 
     const { 
         featuredCoins, 
@@ -46,6 +50,13 @@ const MarketScreen = () => {
     // Handle tab change
     const handleTabChange = (tab: TabType) => {
         changeTab(tab);
+    };
+
+    // Handle pull-to-refresh
+    const onRefresh = async () => {
+        setRefreshing(true);
+        await refreshCoins();
+        setRefreshing(false);
     };
 
     return (
@@ -93,6 +104,16 @@ const MarketScreen = () => {
                             contentContainerStyle={{ paddingHorizontal: 16 }}
                             onScroll={handleScroll}
                             scrollEventThrottle={16}
+                            refreshControl={
+                                <RefreshControl
+                                    refreshing={refreshing}
+                                    onRefresh={onRefresh}
+                                    colors={["#FFFFFF"]}
+                                    tintColor="#FFFFFF"
+                                    title="Pull to refresh"
+                                    titleColor="#FFFFFF"
+                                />
+                            }
                         >
                             {filteredCoins.map((coin) => (
                                 <CoinCard key={coin.id} coin={coin} />

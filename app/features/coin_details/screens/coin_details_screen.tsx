@@ -91,31 +91,35 @@ const CoinDetailsScreen = () => {
         <SafeAreaView style={styles.container}>
           {/* Header */}
           <View style={styles.header}>
-            <TouchableOpacity onPress={handleBack} style={styles.backButton}>
-              <Ionicons name="arrow-back" size={24} color="#FFFFFF" />
+            <TouchableOpacity onPress={handleBack} style={[styles.backButton]}>
+              <Ionicons name="arrow-back" size={18} color="#FFFFFF" />
             </TouchableOpacity>
-            <View style={styles.titleContainer}>
-              <Image source={{ uri: coin.image }} style={styles.coinIcon} />
-              <Text style={styles.title}>{coin.name} ({coin.symbol.toUpperCase()})</Text>
+            <View style={styles.titleWrapper}>
+              <View style={styles.titleContainer}>
+                <Image source={{ uri: coin.image }} style={styles.coinIcon} />
+                <Text style={styles.title}>{coin.name} ({coin.symbol.toUpperCase()})</Text>
+              </View>
             </View>
+            <View style={{width:32}}></View>
           </View>
 
           <ScrollView style={styles.scrollContainer}>
             {/* Price and Change */}
             <View style={styles.priceContainer}>
               <Text style={styles.price}>${coin.currentPrice.toLocaleString()}</Text>
-              <View style={[
-                styles.changeContainer,
-                { backgroundColor: coin.priceChangePercentage24h >= 0 ? '#CDFF00' : '#FF3440' }
+
+            </View>
+
+            <View style={[
+              styles.changeContainer,
+            ]}>
+              <Text style={[
+                styles.changeText,
+                { color: coin.priceChangePercentage24h >= 0 ? '#CDFF00' : '#FF3440' }
               ]}>
-                <Text style={[
-                  styles.changeText,
-                  { color: coin.priceChangePercentage24h >= 0 ? '#000000' : '#FFFFFF' }
-                ]}>
-                  {coin.priceChangePercentage24h >= 0 ? '+' : ''}
-                  {coin.priceChangePercentage24h.toFixed(2)}%
-                </Text>
-              </View>
+                {coin.priceChangePercentage24h >= 0 ? '+' : ''}
+                {coin.priceChangePercentage24h.toFixed(2)}%
+              </Text>
             </View>
 
             {/* Chart */}
@@ -183,6 +187,11 @@ const styles = StyleSheet.create({
   },
   backButton: {
     padding: 8,
+    borderRadius: 24,
+    backgroundColor: '#2B2B2B',
+    width: 48, height: 48,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   titleContainer: {
     flexDirection: 'row',
@@ -216,9 +225,11 @@ const styles = StyleSheet.create({
     marginRight: 12,
   },
   changeContainer: {
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 16,
+    backgroundColor: '#FFFFFF0D',
+    borderRadius: 8,
+    paddingVertical: 4,
+    paddingHorizontal: 8,
+    alignSelf: 'flex-start'
   },
   changeText: {
     fontSize: 16,
@@ -301,6 +312,10 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontFamily: 'LufgaBold',
     fontSize: 14,
+  },
+  titleWrapper: {
+    flex: 1,
+    alignItems: 'center',
   },
 });
 

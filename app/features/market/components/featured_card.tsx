@@ -32,7 +32,9 @@ const FeaturedCard = ({ coin }: FeaturedCardProps) => {
                     borderRadius: 24,
                     padding: 16,
                     marginHorizontal: 8,
-                    marginVertical: 8,
+                    marginVertical: 6,
+                    borderWidth: 1,
+                    borderColor: '#4A4A4A',
                 }}
             >
                 <View style={styles.cardHeader}>
@@ -95,7 +97,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
     },
     coinName: {
-        color: '#CCCCCC',
+        color: '#FFFFFF80',
         fontFamily: 'LufgaRegular',
         fontSize: 14,
     },
@@ -115,9 +117,10 @@ const styles = StyleSheet.create({
         fontSize: 18,
     },
     priceChangeContainer: {
-        backgroundColor: '#4A4A4A',
-        borderRadius: 12,
-        padding: 8,
+        backgroundColor: '#FFFFFF0D',
+        borderRadius: 8,
+        paddingVertical: 4,
+        paddingHorizontal: 8,
     },
     priceChange: {
         fontSize: 14,

@@ -23,7 +23,7 @@ const SearchBar = ({ onSearch }: SearchBarProps) => {
             {/* Section 2: Search text field */}
             <View style={styles.searchSection}>
                 <TextInput
-                    placeholder='search...'
+                    placeholder='Search...'
                     style={styles.searchInput}
                     placeholderTextColor="#FFFFFF80"
                     onChangeText={handleTextChange}
@@ -54,23 +54,23 @@ const styles = StyleSheet.create({
     },
     allCoinsText: {
         color: '#FFFFFF',
-        fontSize: 16,
+        fontSize: 24,
         fontFamily: 'LufgaBold',
     },
     underline: {
         height: 1,
         backgroundColor: '#CDFF00', // primary color
         width: '100%',
-        marginTop: 4,
+        marginTop: 6,
     },
     searchSection: {
         flexDirection: 'row',
         alignItems: 'center',
         backgroundColor: '#2B2B2B4D', // cardBackground color
-        borderRadius: 20,
-        paddingHorizontal: 12,
-        paddingVertical: 8,
+        borderRadius: 32,
+        paddingHorizontal: 16,
         width: '48%',
+        marginTop:12,
     },
     searchIcon: {
         width: 20,
@@ -80,6 +80,7 @@ const styles = StyleSheet.create({
         flex: 1,
         color: '#FFFFFF',
         marginRight: 8,
+        fontSize: 24,
         fontFamily: 'LufgaRegular',
     }
 });
