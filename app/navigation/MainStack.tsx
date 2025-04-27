@@ -32,7 +32,7 @@ export default function MainStack() {
         }}
       />
       <Stack.Screen
-        name="features/market/screens/coin_details_screen"
+        name="features/coin_details/screens/coin_details_screen"
         options={{
           headerShown: true,
           headerTitle: 'Coin Details',

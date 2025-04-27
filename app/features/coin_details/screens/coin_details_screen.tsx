@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity, ActivityIndicator, SafeAreaView, ScrollView, ImageBackground } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
-import { CoinData, OHLCData, fetchCoinOHLC } from '@/app/features/market/services/api';
-import CandleChart from '@/app/features/market/components/candle_chart';
+import { CoinData, OHLCData, fetchCoinOHLC } from '@/app/features/coin_details/services/api';
+import CandleChart from '@/app/features/coin_details/components/candle_chart';
 import chartBgImage from '@/assets/images/chart_bg.png';
 
 const CoinDetailsScreen = () => {
@@ -179,6 +179,7 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     borderBottomWidth: 1,
     borderBottomColor: '#2B2B2B',
+    marginTop: 62,
   },
   backButton: {
     padding: 8,

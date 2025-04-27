@@ -14,7 +14,7 @@ const CoinCard = ({ coin }: CoinCardProps) => {
     const handlePress = () => {
         // Navigate to coin details screen with coin data as a parameter
         router.push({
-            pathname: "/features/market/screens/coin_details_screen",
+            pathname: "/features/coin_details/screens/coin_details_screen",
             params: { coin: JSON.stringify(coin) }
         });
     };
