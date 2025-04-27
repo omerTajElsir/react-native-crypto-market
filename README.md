@@ -1,50 +1,123 @@
-# Welcome to your Expo app 👋
+# React Native Crypto Market
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A modern cryptocurrency market application built with React Native and Expo. This app allows users to track cryptocurrency prices, view detailed information about specific coins, and monitor market trends.
 
-## Get started
+![React Native Crypto Market App](/assets/app-preview.png)
 
-1. Install dependencies
+## App Demo
 
-   ```bash
-   npm install
-   ```
+Watch a demonstration of the app in action:
 
-2. Start the app
+![App Demo](./recording/recodring.mp4)
 
-   ```bash
-    npx expo start
-   ```
+The video showcases the app's main features, including market overview, coin details, search functionality, and the hidden features like pull-to-refresh for updating data.
 
-In the output, you'll find options to open the app in a
+## Features
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- **Authentication**: Secure login with biometric authentication
+- **Market Overview**: View a comprehensive list of cryptocurrencies with key metrics
+- **Featured Coins**: Quickly access trending and popular cryptocurrencies
+- **Detailed Coin Information**: View in-depth data for each cryptocurrency including:
+  - Price charts with multiple timeframes
+  - Market statistics
+  - Historical data
+- **Search Functionality**: Easily find specific cryptocurrencies
+- **Responsive UI**: Beautiful and consistent user interface across devices
+- **Pull to Refresh**: Easily update data by pulling down on the screen
+- **Unit Testing**: Comprehensive test suite to ensure app reliability
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Tech Stack
 
-## Get a fresh project
+- **Framework**: [React Native](https://reactnative.dev/) with [Expo](https://expo.dev/)
+- **Navigation**: [Expo Router](https://docs.expo.dev/router/introduction/) (file-based routing)
+- **Styling**: [NativeWind](https://www.nativewind.dev/) (TailwindCSS for React Native)
+- **Authentication**: Expo Local Authentication for biometric login
+- **Charts**: React Native SVG for data visualization
+- **State Management**: React Context API and custom hooks
 
-When you're ready, run:
+## Project Structure
 
-```bash
-npm run reset-project
+```
+/app
+  /components        # Reusable UI components
+  /contexts          # React Context providers
+  /features          # Feature-based organization
+    /auth            # Authentication related code
+    /coin_details    # Coin detail screens and components
+    /common          # Shared components and utilities
+    /market          # Market overview screens and components
+  /navigation        # Navigation configuration
+  /theme             # Theme system (colors, typography, spacing)
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Getting Started
 
-## Learn more
+### Prerequisites
 
-To learn more about developing your project with Expo, look at the following resources:
+- Node.js (v14 or newer)
+- npm or yarn
+- Expo CLI
+- iOS Simulator or Android Emulator (optional for mobile testing)
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### Installation
 
-## Join the community
+1. Clone the repository
+   ```bash
+   git clone https://github.com/yourusername/react-native-crypto-market.git
+   cd react-native-crypto-market
+   ```
 
-Join our community of developers creating universal apps.
+2. Install dependencies
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+3. Start the development server
+   ```bash
+   npx expo start
+   ```
+
+4. Run on your preferred platform
+   - Press `i` for iOS simulator
+   - Press `a` for Android emulator
+   - Scan the QR code with Expo Go app on your physical device
+
+## Documentation
+
+The project includes detailed documentation for various components:
+
+- [Navigation Structure](/app/navigation/README.md)
+- [UI Components](/app/components/ui/README.md)
+- [Theme System](/app/theme/README.md)
+- [Custom Hooks](/app/features/hooks.md)
+
+## Scripts
+
+- `npm start` - Start the Expo development server
+- `npm run android` - Start the app on Android emulator
+- `npm run ios` - Start the app on iOS simulator
+- `npm run web` - Start the app in a web browser
+- `npm test` - Run tests
+- `npm run lint` - Run linting
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- [CoinGecko API](https://www.coingecko.com/en/api) for cryptocurrency data
+- [Expo](https://expo.dev/) for the amazing React Native tooling
+- [NativeWind](https://www.nativewind.dev/) for the styling system
