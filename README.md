@@ -107,6 +107,10 @@ The project includes detailed documentation for various components:
 - `npm test` - Run tests
 - `npm run lint` - Run linting
 
+## Building for Production
+
+For instructions on how to generate an APK (Android Package) for distribution, please refer to the [APK Build Instructions](BUILD_APK_INSTRUCTIONS.md).
+
 ## Acknowledgments
 
 - [CoinGecko API](https://www.coingecko.com/en/api) for cryptocurrency data

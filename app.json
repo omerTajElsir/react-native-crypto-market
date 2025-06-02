@@ -15,7 +15,10 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.yourcompany.cryptomarket",
+      "versionCode": 1,
+      "permissions": []
     },
     "web": {
       "bundler": "metro",
@@ -36,12 +39,22 @@
       [
         "expo-font",
         {
-          "fonts": ["./assets/fonts/LufgaRegular.ttf"]
+          "fonts": [
+            "./assets/fonts/LufgaRegular.ttf"
+          ]
         }
       ]
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "6cd5a2ef-cd93-4840-a71c-da1f3b734fdd"
+      }
     }
   }
 }
